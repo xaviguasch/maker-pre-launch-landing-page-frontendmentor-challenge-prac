@@ -62,12 +62,16 @@ body {
   text-align: center;
 }
 
+img {
+  max-width: 100%;
+}
+
 /* ================== */
 /* Typography */
 /* ================== */
 
 .hero-title {
-  font-size: var(--fs-40);
+  font-size: var(--fs-32);
   font-weight: var(--fw-extra-bold);
   color: var(--clr-white);
   line-height: 1.25;
@@ -83,8 +87,266 @@ body {
   color: var(--clr-white);
 }
 
-.b-copy-title {
+.b-copy-title,
+.c-copy-title {
   font-size: var(--fs-24);
   font-weight: var(--fw-extra-bold);
   color: var(--clr-white);
+}
+
+.card-strong {
+  font-size: var(--fs-18);
+  font-weight: var(--fw-extra-bold);
+}
+
+.card-title {
+  font-size: var(--fs-40);
+  font-weight: var(--fw-extra-bold);
+}
+
+/* ================== */
+/* Buttons & inputs */
+/* ================== */
+
+.email-input,
+.btn {
+  display: block;
+  border-radius: 3em;
+  padding: 1em 1.25em;
+  width: 100%;
+  font-size: inherit;
+  font-weight: var(--fw-extra-bold);
+}
+
+.email-input {
+  background: hsla(206, 84%, 22%, 1);
+  border: 2px solid transparent;
+}
+
+.email-input::placeholder {
+  color: var(--clr-gray);
+}
+
+.btn {
+  background: var(--clr-cyan);
+  border: 2px solid var(--clr-cyan);
+  color: var(--clr-deep-blue);
+}
+
+.btn:hover,
+.btn:focus {
+  color: var(--clr-white);
+  background: var(--clr-dark-blue);
+}
+
+/* ================== */
+/* Utility styles */
+/* ================== */
+
+.container {
+  margin: 0 auto;
+  padding: 0 1.25em;
+}
+
+/* ================== */
+/* SECTIONS */
+/* ================== */
+
+.header {
+  padding-top: 2em;
+}
+
+.main {
+  padding-top: 3em;
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-areas:
+    'bg-left bg-right'
+    'hero-copy hero-copy';
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+
+.hero-left-bg {
+  grid-area: bg-left;
+}
+
+.hero-right-bg {
+  grid-area: bg-right;
+}
+
+.hero-copy {
+  margin: 2em auto 0;
+  width: 85%;
+
+  grid-area: hero-copy;
+}
+
+.hero-text {
+  margin-top: 1em;
+}
+
+.hero-icon {
+  margin-top: 2em;
+}
+
+/* Section A */
+.section-a {
+  padding-top: 6em;
+}
+
+.elements {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.element {
+  margin-top: 3em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.illustration {
+  display: grid;
+  place-content: center;
+
+  background: var(--clr-deep-blue);
+  padding: 1.75em 2em;
+  width: 120px;
+  height: 124px;
+  border-radius: 3em;
+}
+
+.el-title {
+  margin-top: 1.5em;
+}
+
+.el-text {
+  margin: 1em auto 0;
+  width: 95%;
+}
+
+/* Section B */
+.section-b {
+  margin-top: 8em;
+}
+
+.b-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.b-copy-text {
+  margin-top: 1.5em;
+}
+
+.b-grid {
+  margin-top: 4em;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  grid-gap: 4em;
+}
+
+.card {
+  position: relative;
+  padding: 3em 1.75em 2em;
+  background: var(--clr-deep-blue);
+  color: var(--clr-white);
+  border-radius: 0.5em;
+
+  text-align: left;
+}
+
+.card-icon {
+  position: absolute;
+  top: -25px;
+}
+
+.card-text {
+  margin: 1em 0 0;
+  width: 95%;
+}
+
+.card-title {
+  margin-top: 1em;
+}
+
+.icon-check {
+  margin-right: 1em;
+}
+
+.icon-check svg path {
+  fill: var(--clr-cyan);
+}
+
+.features__list {
+  list-style-type: none;
+}
+
+.features__item {
+  margin-top: 1em;
+}
+
+.card--mod {
+  background: var(--clr-cyan);
+  color: var(--clr-dark-blue);
+}
+
+.card--mod .card-icon {
+  top: -32px;
+}
+
+.card--mod .card-strong {
+  margin-top: 1em;
+}
+
+.card--mod .card-text {
+  width: 90%;
+}
+
+.card--mod .card-title {
+  margin-top: 0.5em;
+}
+
+.card-month {
+  font-size: var(--fs-15);
+  font-weight: var(--fw-extra-light);
+  vertical-align: 10px;
+}
+
+.card--mod .icon-check svg path {
+  fill: var(--clr-dark-blue);
+}
+
+.section-c {
+  margin-top: 10em;
+  padding-bottom: 10em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-copy-title {
+  margin: 0 auto;
+  width: 60%;
+}
+
+.c-form {
+  margin-top: 2em;
+  width: 100%;
+}
+
+.btn {
+  margin-top: 1.5em;
 }

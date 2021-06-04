@@ -350,3 +350,143 @@ img {
 .btn {
   margin-top: 1.5em;
 }
+
+/* ================== */
+/* MEDIA QUERIES */
+/* ================== */
+
+/* Tablet */
+@media (min-width: 765px) {
+  .container {
+    margin: 0 auto;
+    padding: 0 2.5em;
+  }
+
+  .logo {
+    text-align: left;
+  }
+
+  /* Hero */
+  .hero {
+    grid-template-areas: 'bg-left hero-copy bg-right';
+    grid-template-columns: 45% 60% 45%;
+    grid-template-rows: auto;
+
+    place-content: center;
+
+    overflow-x: hidden;
+  }
+
+  .hero-copy.container {
+    width: 100%;
+
+    margin: 4em auto 0;
+
+    padding: 0;
+  }
+
+  .hero-text {
+    margin-top: 2em;
+  }
+
+  /* Section A */
+  .section-a {
+    padding-top: 3em;
+  }
+
+  .elements {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    width: 575px;
+    margin: 0 auto;
+  }
+
+  .element {
+    margin-top: 3em;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+
+    gap: 3.5em;
+  }
+
+  .element:nth-of-type(1),
+  .element:nth-of-type(3) {
+    margin-left: 4em;
+  }
+
+  .illustration {
+    display: grid;
+
+    background: var(--clr-deep-blue);
+    padding: 1.75em 1.5em;
+    width: 120px;
+    height: 124px;
+    border-radius: 3em;
+  }
+
+  .el-copy {
+    text-align: left;
+    max-width: 340px;
+  }
+
+  .el-title {
+    margin-top: 0;
+  }
+
+  .el-text {
+    width: 100%;
+  }
+
+  .el-text--var {
+    width: 90%;
+    margin-left: 0;
+  }
+
+  .b-copy {
+    max-width: 575px;
+    margin: 0 auto;
+    padding: 0 1em;
+  }
+
+  .card {
+    max-width: 445px;
+    margin: 0 auto;
+    padding-bottom: 4em;
+  }
+
+  .section-c.container {
+    margin-top: 10em;
+    margin-bottom: 8em;
+
+    max-width: 550px;
+    padding: 0;
+  }
+
+  .c-copy-title {
+    width: 100%;
+  }
+
+  .c-form {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2em;
+  }
+
+  .c-form input {
+    width: 320px;
+  }
+
+  .c-form .btn {
+    width: 140px;
+  }
+
+  .btn {
+    margin-top: 0;
+  }
+}

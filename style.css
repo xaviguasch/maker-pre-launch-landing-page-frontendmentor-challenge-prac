@@ -498,6 +498,10 @@ img {
     font-size: var(--fs-48);
   }
 
+  .b-copy-title {
+    font-size: var(--fs-32);
+  }
+
   .container {
     margin: 0 auto;
     padding: 0 9em;
@@ -536,6 +540,10 @@ img {
 
   .hero-icon {
     margin-top: 3em;
+  }
+
+  .section-a {
+    margin-top: 5em;
   }
 
   .elements {
@@ -580,5 +588,19 @@ img {
   .el-text {
     margin: 1.5em 0 0;
     width: 90%;
+  }
+
+  .b-grid {
+    max-width: 950px;
+    margin: 8em auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2.5em;
+  }
+
+  .card {
+    max-width: unset;
+    margin: 0 auto;
+    padding-bottom: 6em;
   }
 }

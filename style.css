@@ -71,9 +71,9 @@ img {
 /* ================== */
 
 .hero-title {
+  color: var(--clr-white);
   font-size: var(--fs-32);
   font-weight: var(--fw-extra-bold);
-  color: var(--clr-white);
   line-height: 1.25;
 }
 
@@ -82,16 +82,16 @@ img {
 }
 
 .el-title {
+  color: var(--clr-white);
   font-size: var(--fs-18);
   font-weight: var(--fw-extra-bold);
-  color: var(--clr-white);
 }
 
 .b-copy-title,
 .c-copy-title {
+  color: var(--clr-white);
   font-size: var(--fs-24);
   font-weight: var(--fw-extra-bold);
-  color: var(--clr-white);
 }
 
 .card-strong {
@@ -108,35 +108,38 @@ img {
 /* Buttons & inputs */
 /* ================== */
 
-.email-input,
-.btn {
-  display: block;
+.input-email,
+.cta-btn {
   border-radius: 3em;
-  padding: 1em 1.25em;
-  width: 100%;
+  display: block;
   font-size: inherit;
   font-weight: var(--fw-extra-bold);
+  padding: 1em 1.25em;
+  width: 100%;
 }
 
-.email-input {
+.input-email {
   background: hsla(206, 84%, 22%, 1);
   border: 2px solid transparent;
+  color: var(--clr-white);
+  font-weight: var(--fw-extra-light);
 }
 
-.email-input::placeholder {
+.input-email::placeholder {
   color: var(--clr-gray);
 }
 
-.btn {
+.cta-btn {
   background: var(--clr-cyan);
   border: 2px solid var(--clr-cyan);
   color: var(--clr-deep-blue);
+  cursor: pointer;
 }
 
-.btn:hover,
-.btn:focus {
-  color: var(--clr-white);
+.cta-btn:hover,
+.cta-btn:focus {
   background: var(--clr-dark-blue);
+  color: var(--clr-white);
 }
 
 /* ================== */
@@ -162,6 +165,7 @@ img {
 
 /* Hero */
 .hero {
+  /* Grid */
   display: grid;
   grid-template-areas:
     'bg-left bg-right'
@@ -171,18 +175,21 @@ img {
 }
 
 .hero-left-bg {
+  /* Grid */
   grid-area: bg-left;
 }
 
 .hero-right-bg {
+  /* Grid */
   grid-area: bg-right;
 }
 
 .hero-copy {
+  /* Grid */
+  grid-area: hero-copy;
+
   margin: 2em auto 0;
   width: 85%;
-
-  grid-area: hero-copy;
 }
 
 .hero-text {
@@ -199,28 +206,31 @@ img {
 }
 
 .elements {
+  /* Grid */
   display: grid;
   grid-template-columns: 1fr;
 }
 
 .element {
-  margin-top: 3em;
-
+  /* Flex */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  margin-top: 3em;
 }
 
 .illustration {
+  /* Grid */
   display: grid;
   place-content: center;
 
   background: var(--clr-deep-blue);
+  border-radius: 3em;
+  height: 124px;
   padding: 1.75em 2em;
   width: 120px;
-  height: 124px;
-  border-radius: 3em;
 }
 
 .el-title {
@@ -238,6 +248,7 @@ img {
 }
 
 .b-copy {
+  /* Flex */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -249,20 +260,20 @@ img {
 }
 
 .b-grid {
-  margin-top: 4em;
+  /* Grid */
   display: grid;
   grid-template-columns: 1fr;
-
   grid-gap: 4em;
+
+  margin-top: 4em;
 }
 
 .card {
-  position: relative;
-  padding: 3em 1.75em 2em;
   background: var(--clr-deep-blue);
-  color: var(--clr-white);
   border-radius: 0.5em;
-
+  color: var(--clr-white);
+  padding: 3em 1.75em 2em;
+  position: relative;
   text-align: left;
 }
 
@@ -328,27 +339,54 @@ img {
 }
 
 .section-c {
-  margin-top: 10em;
-  padding-bottom: 10em;
-
+  /* Flex */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  margin-top: 10em;
+  padding-bottom: 10em;
 }
 
 .c-copy-title {
   margin: 0 auto;
-  width: 60%;
+  width: 70%;
 }
 
-.c-form {
+.form-area {
   margin-top: 2em;
   width: 100%;
 }
 
-.btn {
-  margin-top: 1.5em;
+.form-control {
+  position: relative;
+}
+
+.cta-btn {
+  margin-top: 1.75em;
+}
+
+.error-message {
+  display: block;
+  font-weight: var(--fw-extra-light);
+  margin-top: 0.5em;
+  margin-left: 2em;
+  opacity: 0;
+  text-align: left;
+  width: 100%;
+
+  position: absolute;
+  top: 45px;
+}
+
+.error.form-control > .error-message {
+  color: red;
+  opacity: 1;
+}
+
+.error.form-control .input-email {
+  border: 1px red solid;
 }
 
 /* ================== */
@@ -368,21 +406,19 @@ img {
 
   /* Hero */
   .hero {
+    /* Grid */
     grid-template-areas: 'bg-left hero-copy bg-right';
     grid-template-columns: 45% 60% 45%;
     grid-template-rows: auto;
-
     place-content: center;
 
     overflow-x: hidden;
   }
 
   .hero-copy.container {
-    width: 100%;
-
     margin: 4em auto 0;
-
     padding: 0;
+    width: 100%;
   }
 
   .hero-text {
@@ -395,22 +431,23 @@ img {
   }
 
   .elements {
+    /* Grid */
     display: grid;
     grid-template-columns: 1fr;
 
-    width: 575px;
     margin: 0 auto;
+    width: 575px;
   }
 
   .element {
-    margin-top: 3em;
-
+    /* Flex */
     display: flex;
     flex-direction: row;
     justify-content: start;
     align-items: center;
-
     gap: 3.5em;
+
+    margin-top: 3em;
   }
 
   .element:nth-of-type(1),
@@ -419,13 +456,14 @@ img {
   }
 
   .illustration {
+    /* Grid */
     display: grid;
 
     background: var(--clr-deep-blue);
+    border-radius: 3em;
+    height: 124px;
     padding: 1.75em 1.5em;
     width: 120px;
-    height: 124px;
-    border-radius: 3em;
   }
 
   .el-copy {
@@ -442,51 +480,52 @@ img {
   }
 
   .el-text--var {
-    width: 90%;
     margin-left: 0;
+    width: 90%;
   }
 
   .b-copy {
-    max-width: 575px;
     margin: 0 auto;
     padding: 0 1em;
+    max-width: 575px;
   }
 
   .card {
-    max-width: 445px;
     margin: 0 auto;
     padding-bottom: 4em;
+    max-width: 445px;
   }
 
   .section-c.container {
     margin-top: 10em;
     margin-bottom: 8em;
-
-    max-width: 550px;
     padding: 0;
+    max-width: 550px;
   }
 
   .c-copy-title {
     width: 100%;
   }
 
-  .c-form {
+  .form {
+    /* Flex */
     display: flex;
-
     justify-content: space-between;
     align-items: center;
+
     padding: 0 2em;
   }
 
-  .c-form input {
+  .form input {
     width: 320px;
   }
 
-  .c-form .btn {
+  .form .cta-btn {
+    height: 48px;
     width: 140px;
   }
 
-  .btn {
+  .cta-btn {
     margin-top: 0;
   }
 }
@@ -512,30 +551,27 @@ img {
   }
 
   .hero {
+    /* Grid */
     grid-template-areas: 'bg-left hero-copy bg-right';
     grid-template-columns: 35% 45% 35%;
     grid-template-rows: auto;
-
     place-content: center;
 
     overflow-x: hidden;
-
     margin-top: 4em;
   }
 
   .hero-copy.container {
-    width: 100%;
-
     margin: 5em auto 0;
-
     padding: 0;
+    width: 100%;
   }
 
   .hero-title,
   .hero-text {
-    width: 82%;
     margin-left: auto;
     margin-right: auto;
+    width: 82%;
   }
 
   .hero-icon {
@@ -547,23 +583,23 @@ img {
   }
 
   .elements {
+    /* Grid */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 2em;
 
     width: unset;
     max-width: 1150px;
-    gap: 2em;
   }
 
   .element {
-    margin-top: 3em;
-
+    /* Flex */
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-
     gap: unset;
 
+    margin-top: 3em;
     max-width: 267px;
   }
 
@@ -591,11 +627,13 @@ img {
   }
 
   .b-grid {
-    max-width: 950px;
-    margin: 8em auto 0;
+    /* Grid */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2.5em;
+
+    max-width: 950px;
+    margin: 8em auto 0;
   }
 
   .card {
